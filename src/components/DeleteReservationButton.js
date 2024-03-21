@@ -8,6 +8,6 @@ export const DeleteReservationButton = ({ reservationId, onDelete }) => {
     };
 
     return (
-        <button onClick={handleClick}>Supprimer Réservation</button>
+        <button className="delete" onClick={handleClick}>Supprimer</button>
     );
 };

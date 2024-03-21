@@ -46,33 +46,34 @@ export const ReservationFormModal = ({ reservation, onUpdate, onClose}) => {
     
     return (
         <div className="modal">
-            <button className="close-button" onClick={onClose}>X</button> 
+            
 
             <div className="modal-content">
-                <h2>Modifier la réservation</h2>
+                <div className="close-button" onClick={onClose}>X</div> 
+                <h2 class="formTitle">Modifier la réservation</h2>
                 <form onSubmit={handleSubmit}>
-                    <label>
-                        Nom:
+                    <p>
+                        <label>Nom :</label>
                         <input type="text" name="nom" value={formData.nom} onChange={handleChange} />
-                    </label>
-                    <label>
-                        Prénom:
+                    </p>
+                    <p>
+                        <label>Prénom :</label>
                         <input type="text" name="prenom" value={formData.prenom} onChange={handleChange} />
-                    </label>
-                    <label>
-                        Nombre de tickets :
+                    </p>
+                    <p>
+                        <label>Nombre de tickets :</label>
                         <input type="number" name="tickets" value={formData.tickets} onChange={handleChange} />
-                    </label>
-                    <label>
-                        Mail:
+                    </p>
+                    <p>
+                        <label>Mail :</label>
                         <input type="text" name="mail" value={formData.mail} onChange={handleChange} />
-                    </label>
-                    <label>
-                        Date:
+                    </p>
+                    <p>
+                        <label> Date :</label>
                         <input type="date" name="date" value={formData.date} onChange={handleChange} />
-                    </label>
-                    <label>
-                        Créneau:
+                    </p>
+                    <p>
+                        <label>Créneau :</label>
                         <input
                             type="datetime"
                             name="horaire"
@@ -82,7 +83,8 @@ export const ReservationFormModal = ({ reservation, onUpdate, onClose}) => {
                             max={18}
                             step={1}
                         />
-                    </label>
+                    </p>
+                    
                     {/* Autres champs de formulaire pour les données de la réservation */}
                     <button type="submit">Enregistrer les modifications</button>
                 </form>

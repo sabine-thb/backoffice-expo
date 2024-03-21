@@ -9,7 +9,7 @@ export const UpdateReservationButton = ({ onEdit}) => {
     };
 
     return (
-        <button onClick={handleClick}>Modifier</button>
+        <button className="update"onClick={handleClick}>Modifier</button>
     );
 };
 

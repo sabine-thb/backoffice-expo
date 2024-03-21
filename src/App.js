@@ -1,6 +1,7 @@
 import './App.css';
 import {ReservationList} from './components/ReservationList';
 import React, { useState } from 'react';
+import './styles/styles.css'; // Importation de la feuille de style globale
 
 function App() {
   // const [reservation, setReservation] = useState(null);

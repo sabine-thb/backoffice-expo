@@ -107,7 +107,7 @@ const handleCloseModal = () => {
 //Je retourne un tableau avec les réservations
     return (
         <div> 
-            <h2>Liste des réservations :</h2>
+            <h2 className="resaTitle">Liste des réservations :</h2>
             {deleteSuccess && <div className="success-message">La réservation a été supprimée avec succès.</div>}
             {updateSuccess && <div className="success-message">La réservation a été modifiée avec succès.</div>}
             {editReservation && (
