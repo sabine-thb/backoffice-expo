@@ -1,25 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
+import {ReservationList} from './components/ReservationList';
+import React, { useState } from 'react';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  // const [reservation, setReservation] = useState(null);
+  // Fonction pour mettre à jour les données de réservation
+  
+  // const updateReservationLocally = (updatedData) => {
+  //   // Mettre à jour l'état de la réservation avec les nouvelles données
+  //   setReservation(updatedData);
+
+  // };
+
+  return <div className="App"><ReservationList /></div>;
 }
+
+
+
+
 
 export default App;
