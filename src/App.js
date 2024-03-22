@@ -1,19 +1,32 @@
 import './App.css';
-import {ReservationList} from './components/ReservationList';
+
 import React, { useState } from 'react';
 import './styles/styles.css'; // Importation de la feuille de style globale
+import { ReservationStats } from './components/ReservationStats';
+import {ReservationList} from './components/ReservationList';
+import logo from './styles/images/logo.png';
+import { TicketSales } from './components/TicketsStats';
+
+
+
 
 function App() {
-  // const [reservation, setReservation] = useState(null);
-  // Fonction pour mettre à jour les données de réservation
-  
-  // const updateReservationLocally = (updatedData) => {
-  //   // Mettre à jour l'état de la réservation avec les nouvelles données
-  //   setReservation(updatedData);
 
-  // };
-
-  return <div className="App"><ReservationList /></div>;
+  return <div className="App">
+    <header>
+      <div className='logoContainer'>
+        <img src={logo}  className="logo" />
+      </div>
+      
+      <h1 className='titlePage'>Backoffice <br />esprit vigée</h1>
+    </header>
+    <ReservationList />
+    <div className='stats'>
+      <ReservationStats />
+      <TicketSales />
+    </div>
+    
+    </div>;
 }
 
 

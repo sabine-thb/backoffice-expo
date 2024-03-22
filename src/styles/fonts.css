@@ -1,0 +1,34 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+/*Je mets en place les polices de tout le site*/
+
+@font-face {
+    font-family: "Tan-Pearl";
+    src: url(./fonts/TAN-PEARL.woff2) format(woff2);
+}
+
+@font-face {
+    font-family: "PromptRegular";
+    src: url(./fonts/Prompt-Regular.woff2) format(woff2);
+}
+
+@font-face {
+    font-family: "PromptBold";
+    src: url(./fonts/Prompt-SemiBold.woff2) format(woff2);
+}
+
+
+/*Je définis les variables de couleur qui vont être utilisées dans le site*/
+
+
+
+
+
+
+
+
+

@@ -6,6 +6,7 @@ export const ReservationFormModal = ({ reservation, onUpdate, onClose}) => {
     const [formData, setFormData] = useState({
         nom: reservation.nom,
         prenom: reservation.prenom,
+        dateResa: reservation.dateResa,
         tickets: reservation.tickets,
         mail: reservation.mail,
         date: reservation.date,
@@ -23,6 +24,7 @@ export const ReservationFormModal = ({ reservation, onUpdate, onClose}) => {
          // Récupérer les valeurs du formulaire
         const nom = e.target.nom.value;
         const prenom = e.target.prenom.value;
+        const dateResa = e.target.dateResa.value;
         const tickets = e.target.tickets.value;
         const mail = e.target.mail.value;
         const date = e.target.date.value;
@@ -33,6 +35,7 @@ export const ReservationFormModal = ({ reservation, onUpdate, onClose}) => {
             id: reservation.id, // Assurez-vous d'avoir l'identifiant de la réservation
             nom,
             prenom,
+            dateResa,
             tickets,
             mail,
             date,
@@ -47,10 +50,10 @@ export const ReservationFormModal = ({ reservation, onUpdate, onClose}) => {
     return (
         <div className="modal">
             
-
-            <div className="modal-content">
+            <div className='backgroundPopup'></div>
+            <div className="modal-content">              
                 <div className="close-button" onClick={onClose}>X</div> 
-                <h2 class="formTitle">Modifier la réservation</h2>
+                <h2 className="formTitle">Modifier la réservation</h2>
                 <form onSubmit={handleSubmit}>
                     <p>
                         <label>Nom :</label>
@@ -61,7 +64,11 @@ export const ReservationFormModal = ({ reservation, onUpdate, onClose}) => {
                         <input type="text" name="prenom" value={formData.prenom} onChange={handleChange} />
                     </p>
                     <p>
-                        <label>Nombre de tickets :</label>
+                        <label>Date commande :</label>
+                        <input type="date" name="dateResa" value={formData.dateResa} onChange={handleChange} />
+                    </p>
+                    <p>
+                        <label>Tickets :</label>
                         <input type="number" name="tickets" value={formData.tickets} onChange={handleChange} />
                     </p>
                     <p>
@@ -69,7 +76,7 @@ export const ReservationFormModal = ({ reservation, onUpdate, onClose}) => {
                         <input type="text" name="mail" value={formData.mail} onChange={handleChange} />
                     </p>
                     <p>
-                        <label> Date :</label>
+                        <label> Date visite :</label>
                         <input type="date" name="date" value={formData.date} onChange={handleChange} />
                     </p>
                     <p>
@@ -86,7 +93,7 @@ export const ReservationFormModal = ({ reservation, onUpdate, onClose}) => {
                     </p>
                     
                     {/* Autres champs de formulaire pour les données de la réservation */}
-                    <button type="submit">Enregistrer les modifications</button>
+                    <button type="submit" className="submit">Enregistrer les modifications</button>
                 </form>
             </div>
         </div>

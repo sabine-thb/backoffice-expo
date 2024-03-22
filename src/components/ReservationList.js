@@ -33,35 +33,27 @@ export const ReservationList = () => {
         fetchReservations();
     }, []);
 
+
+
 // Je supprime une réservation
-    const handleDeleteReservation = async (reservationId) => {
-        try {
-            const response = await fetch(`https://expo-vigee.thibout.butmmi.o2switch.site/api-expo/index.php/reservation/${reservationId}`, {
-                method: 'DELETE',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-            });
-            if (!response.ok) {
-                throw new Error('Erreur lors de la suppression de la réservation');
-            }
 
-          // Suppression réussie, mettez à jour la liste des réservations
-          setReservations(reservations.filter(reservation => reservation.id !== reservationId));
+const handleDeleteReservation = async () => {
+    try {
+      await fetchReservations(); // Actualiser la liste des réservations
+      // Peut-être une logique supplémentaire après la mise à jour
 
-          // Afficher le message de suppression réussie
-          setDeleteSuccess(true);
+      // Afficher le message de suppression réussie
+      setDeleteSuccess(true);
 
-          // Masquer le message après 3 secondes (3000 millisecondes)
-          setTimeout(() => {
-              setDeleteSuccess(false);
-          }, 3000);
-
-      } catch (error) {
-          console.error('Erreur:', error);
-          alert('Une erreur est survenue lors de la suppression de la réservation.');
-      }
-    };
+      // Masquer le message après 3 secondes (3000 millisecondes)
+      setTimeout(() => {
+          setDeleteSuccess(false);
+      }, 3000);
+    } catch (error) {
+      console.error('Erreur lors de la mise à jour des réservations après suppression :', error);
+    }
+  };
+   
 
 //Je modifie une réservation
   const handleEditReservation = (reservation) => {
@@ -82,7 +74,6 @@ export const ReservationList = () => {
             throw new Error('Erreur lors de la modification de la réservation');
         }
 
-        // updateReservationLocally(updatedReservation);
         fetchReservations();
 
         setUpdateSuccess(true);
@@ -106,7 +97,7 @@ const handleCloseModal = () => {
 
 //Je retourne un tableau avec les réservations
     return (
-        <div> 
+        <div className='reservationList'> 
             <h2 className="resaTitle">Liste des réservations :</h2>
             {deleteSuccess && <div className="success-message">La réservation a été supprimée avec succès.</div>}
             {updateSuccess && <div className="success-message">La réservation a été modifiée avec succès.</div>}
@@ -125,22 +116,26 @@ const handleCloseModal = () => {
                         <th>ID</th>
                         <th>Nom</th>
                         <th>Prénom</th>
-                        <th>Nombre de tickets</th>
+                        <th>Date commande</th>
+                        <th>Tickets</th>
                         <th>Mail</th>
-                        <th>Date</th>
+                        <th>Date visite</th>
                         <th>Créneau</th>
                         <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
-                    {reservations.map((reservation) => (
+                {reservations
+                .sort((a, b) => new Date(b.dateResa) - new Date(a.dateResa))
+                .map((reservation) => (
                         <tr key={reservation.id}>
                             <td>{reservation.id}</td>
                             <td>{reservation.nom}</td>
                             <td>{reservation.prenom}</td>
+                            <td>{new Date(reservation.dateResa).toLocaleDateString('fr-FR')}</td>
                             <td>{reservation.tickets}</td>
                             <td>{reservation.mail}</td>
-                            <td>{reservation.date}</td>
+                            <td>{new Date(reservation.date).toLocaleDateString('fr-FR')}</td>
                             <td>{reservation.horaire}</td>
                             <td>
                                 <UpdateReservationButton
