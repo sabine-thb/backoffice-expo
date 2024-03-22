@@ -6,6 +6,7 @@ import { ReservationStats } from './components/ReservationStats';
 import {ReservationList} from './components/ReservationList';
 import logo from './styles/images/logo.png';
 import { TicketSales } from './components/TicketsStats';
+import { Footer } from './components/Footer';
 
 
 
@@ -25,6 +26,7 @@ function App() {
       <ReservationStats />
       <TicketSales />
     </div>
+    <Footer/>
     
     </div>;
 }

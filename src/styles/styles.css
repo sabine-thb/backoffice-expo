@@ -199,6 +199,7 @@ label{
 .stats{
     display: flex;
     gap:50px;
+    padding-bottom:100px;
 }
 
 /*je stylise le graphique*/
@@ -235,6 +236,23 @@ label{
     color:white;
     font-family: "PromptBold", sans-serif;
     font-size: 1.8rem;
+}
+
+/*je stylise le footer*/
+
+footer{
+    background-color: #2F6C68;
+    padding:20px;
+    width:100vw;
+    position:absolute;
+    bottom:-25px;
+    left:-25px;
+    color:white;
+    text-align: right;
+}
+
+.footerContent{
+    margin-right:50px;
 }
 
 
