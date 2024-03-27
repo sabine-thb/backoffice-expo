@@ -8,7 +8,28 @@ body {
     font-size: 1rem;
     overflow-x: hidden !important;
     padding:25px;
+    min-height: 100vh;
+    width:100%;
 }
+
+#root, .App{
+    width:100%;
+    min-height:90vh;
+}
+
+
+/*Je stylise la page de connexion*/
+
+.connexion{
+    width:fit-content;
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform: translate(-50%,-50%);
+    background-color: rgba(31, 31, 31, 0.526);
+    padding:30px;
+}
+
 
 header {
     min-height: 100vh;
@@ -185,13 +206,19 @@ label{
 
 .submit{
     width:fit-content;
-    font-family: "Prompt", sans-serif;
-    padding:10px;
+    font-family: "PromptRegular", sans-serif;
+    padding:10px 15px;
     background-color:#DBD7C5;
     border:none;
     border-radius: 50px;
     margin:auto;
+    cursor: pointer;
 
+}
+
+.deco{
+    position:absolute;
+    right:0;
 }
 
 /*Je stylise la partie des stats*/

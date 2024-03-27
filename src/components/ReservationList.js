@@ -17,7 +17,7 @@ export const ReservationList = () => {
     const fetchReservations = async () => {
       try {
           const response = await fetch(
-              'https://expo-vigee.thibout.butmmi.o2switch.site/api-expo/index.php/reservation',
+              'https://api-expo.esprit-vigee.com/index.php/reservation',
           );
           if (!response.ok) {
               throw new Error('Erreur lors de la récupération des réservations');
@@ -63,7 +63,7 @@ const handleDeleteReservation = async () => {
   const handleUpdateReservation = async (updatedReservation) => {
     console.log(updatedReservation);
     try {
-        const response = await fetch(`https://expo-vigee.thibout.butmmi.o2switch.site/api-expo/index.php/reservation/${updatedReservation.id}`, {
+        const response = await fetch(`https://api-expo.esprit-vigee.com/index.php/reservation/${updatedReservation.id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',

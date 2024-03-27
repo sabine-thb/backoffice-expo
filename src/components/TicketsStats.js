@@ -6,7 +6,7 @@ export const TicketSales = () => {
     useEffect(() => {
         const fetchTotalTickets = async () => {
             try {
-                const response = await fetch('https://expo-vigee.thibout.butmmi.o2switch.site/api-expo/index.php/reservation');
+                const response = await fetch('https://api-expo.esprit-vigee.com/index.php/reservation');
                 if (!response.ok) {
                     throw new Error('Failed to fetch reservations data');
                 }

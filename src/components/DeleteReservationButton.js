@@ -6,7 +6,7 @@ export const DeleteReservationButton = ({ reservationId, onDelete }) => {
     if (isConfirmed) {
       try {
         await fetch(
-          `https://expo-vigee.thibout.butmmi.o2switch.site/api-expo/index.php/reservation/${reservationId}`,
+          `https://api-expo.esprit-vigee.com/index.php/reservation/${reservationId}`,
           {
             method: 'DELETE',
           },
